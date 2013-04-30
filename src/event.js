@@ -450,7 +450,7 @@ jQuery.event = {
 		filter: function( event, original ) {
 
 			// Add which for key events
-			if ( event.which == null ) {
+			if ( typeof event.which !== "number" ) {
 				event.which = original.charCode != null ? original.charCode : original.keyCode;
 			}
 
